@@ -1,7 +1,9 @@
 import lombok.*;
 import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
 
+@SuperBuilder
 @Accessors(fluent = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @ToString
@@ -10,15 +12,16 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Shape {
+
+//abstract class: contains at least 1 abstract method
+//We can't instantiate an abstract class
+//an abstract class is defined to be used as a base or super class for other classes
+public abstract class Shape {
     int id;
     String color;
 
-    public double area(){
-        return 0;
-    }
-    public double perimeter(){
-        return 0;
-    }
+    //abstract methods
+    public abstract double area();
+    public abstract double perimeter();
 
 }
