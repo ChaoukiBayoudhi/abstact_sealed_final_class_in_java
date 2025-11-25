@@ -2,16 +2,18 @@ import lombok.*;
 import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-
-@Accessors(fluent = true)
-@FieldDefaults(level = AccessLevel.PRIVATE)
-@ToString
-@EqualsAndHashCode
+@Builder
 @Getter
 @Setter
+@NoArgsConstructor
+//when using staticName option of the lombok.RequiredArgsConstructor annotation,
+//we can create a Point object using Point.of(double x, double y)
+
 @RequiredArgsConstructor(staticName = "of")
-//using of on the @RequiredArgsConstructor annotation, provide the possibility to create a Point object without using the new keyword
-//so we can create a point using the syntax Point.of(x,y)
+@ToString
+@EqualsAndHashCode
+@Accessors(fluent = true, chain = true)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Point {
     @NonNull
     double x;
