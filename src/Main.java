@@ -45,4 +45,36 @@ void main() {
     IO.println("area of the triangle = "+s1.area());
     IO.println("perimeter of the triangle = "+s1.perimeter());
 
+
+    s1=Rectangle.builder()
+            .id(3)
+            .color("Blue")
+            .length(10)
+            .width(20)
+            .build();
+    //if the method is not defined into Shape class
+    //((Rectangle)s1).showAreaAndPerimeter();
+    s1.showAreaAndPerimeter();
+
+    s1=Square.builder()
+            .id(8)
+            .color("Yellow")
+            .length(15)
+            .build();
+
+    s1.showAreaAndPerimeter();
+
+    //create a Triangle
+    s1=Triangle.builder()
+            .id(11)
+            .color("red")
+            .A(Point.of(11.2, 5.3))
+            .B(Point.of(7.3,9.6))
+            .C(Point.of(12.4,15.7))
+            .build();
+    IO.println(s1);
+    s1.showAreaAndPerimeter();
+
+
+
 }
