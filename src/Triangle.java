@@ -17,7 +17,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 //the triangle is rectangle in A
-public class Triangle extends Shape{
+public final class Triangle extends Shape{
     //define Point into Triangle is called composition
     Point A;
     Point B;
@@ -55,4 +55,11 @@ public class Triangle extends Shape{
     public double perimeter() {
         return distance(A,B) + distance(B,C) + distance(C,A);
     }
+
+    //not permitter because it is a final method in Shape class
+//    @Override
+//    public void showAreaAndPerimeter()
+//    {
+//        
+//    }
 }

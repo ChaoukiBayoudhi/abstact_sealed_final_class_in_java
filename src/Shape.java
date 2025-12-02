@@ -12,16 +12,21 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
+@RequiredArgsConstructor
 //abstract class: contains at least 1 abstract method
 //We can't instantiate an abstract class
 //an abstract class is defined to be used as a base or super class for other classes
-public abstract class Shape {
+public sealed abstract class Shape permits Square,Triangle {
+    @NonNull
     int id;
     String color;
 
     //abstract methods
     public abstract double area();
     public abstract double perimeter();
+
+    public final void showAreaAndPerimeter(){
+        IO.println("area = "+area()+"\nperimeter = "+perimeter());
+    }
 
 }

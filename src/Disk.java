@@ -11,7 +11,7 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Disk extends Square {
+public final class Disk extends Square {
     Point center;
 
     @Override

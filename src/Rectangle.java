@@ -10,8 +10,8 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
-public class Rectangle extends Square {
+public final class Rectangle extends Square {
+    @NonNull
     double width;
 
     @Override

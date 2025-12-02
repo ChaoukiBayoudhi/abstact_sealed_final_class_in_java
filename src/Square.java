@@ -11,10 +11,17 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @NoArgsConstructor()
 
+
 //a subclass that inherits from abstract-class must be either abstract
-//or implement all abstract methods of the super-class
+//or implement all abstract methods of the super-class,
 //for example, if one abstract-method is not overloaded, the child class is abstact
-public class Square extends Shape {
+//if a class is a subclass of a sealed class,
+//We have 3 possibilities :
+//1. The class is sealed itself and must specify all the permits sub-classes
+//2. The class is non-sealed so no need to specify permits sub-classes
+//3. The class is a final class, so no possibility to extend
+public sealed class Square extends Shape permits Disk, Rectangle {
+    @NonNull
     double length;
 
     //override abstract methods
@@ -33,4 +40,6 @@ public class Square extends Shape {
         super(id, color);
         this.length = length;
     }
+
+
 }
